@@ -13,15 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
-Route::get('/diagnosa', function () {
-    return view('diagnosa');
-})->name('diagnosa');
-Route::get('/info', function () {
-    return view('info');
-})->name('info');
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/', 'PageController@home')->name('home');
+Route::get('/diagnosa', 'PageController@diagnosa_page')->name('diagnosa');
+Route::post('/diagnosa', 'PageController@diagnosa_proses')->name('post-diagnosa');
+Route::get('/info', 'PageController@info_page')->name('info');
+Route::get('/about', 'PageController@about_page')->name('about');
